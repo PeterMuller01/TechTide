@@ -500,3 +500,31 @@ textarea:required:invalid,
 select:required:invalid {
   border-color: #cc7a7a;
 }
+
+/* ============================================================
+   AUTH / LOGIN + SIGNUP
+   Centralized styles for both login and signup sections.
+============================================================ */
+.auth-card{
+  max-width: 420px;
+  margin: 1rem auto 2rem;
+}
+
+.auth-heading{
+  font-size: 1.25rem;
+  color: var(--tt-blue);
+  text-align: center;
+  margin-bottom: .5rem;
+}
+
+.auth-links{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: .35rem;
+}
+.auth-link{
+  color: var(--tt-blue);
+  text-decoration: none;
+  font-weight: 600;
+}
+.auth-link:hover{ text-decoration: underline; }
