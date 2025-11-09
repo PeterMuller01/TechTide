@@ -25,7 +25,6 @@
         <a href="news.html">News</a>
         <a href="resources.html">Resources</a>
         <a href="feedback.html">Feedback</a>
-        <a href="login.html">Login</a>
       </nav>
 
       <p class="intro">
@@ -54,11 +53,17 @@
               type="email"
               inputmode="email"
               autocomplete="email"
-              placeholder="example@email.com"
+              placeholder="you@school.edu"
               required
             />
             <p class="hint">We’ll only use this to reply to your message.</p>
           </div>
+          <div class="checks">
+            <label class="check">
+              <input type="checkbox" id="anonymous" name="anonymous" />
+                Submit feedback anonymously (don’t include my email)
+              </label>
+  </div>
         </fieldset>
 
         <!-- Category / details -->
@@ -137,12 +142,8 @@
             <input type="checkbox" name="contact_ok" />
             It’s okay to contact me for more info.
           </label>
-          <label class="check">
-            <input type="checkbox" name="anon" />
-            Send anonymously (email not required).
-          </label>
         </div>
-        <div id="formErrors" class="form-errors" role="alert" aria-live="polite"></div>
+
         <!-- Submit button (not hooked to anything yet) -->
         <div class="actions">
           <button class="btn" type="submit">Submit Feedback</button>
@@ -152,6 +153,12 @@
           </p>
         </div>
       </form>
+
+      <!-- Static “success” placeholder you can swap in later -->
+      <aside class="card note">
+        <strong>Note:</strong> This is a rough draft. Hook this form to your
+        back end or a service later.
+      </aside>
     </main>
 
     <footer class="site-footer">
