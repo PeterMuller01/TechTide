@@ -517,6 +517,21 @@ select:required:invalid {
   margin-bottom: .5rem;
 }
 
+.login-page {
+  /* waveLogin.png should be in the same folder as the HTML */
+  background-image: url("Images/waveLogin.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;  /* image stays still while content scrolls */
+}
+.login-page .container {
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+.login-page .hero {
+  background: transparent;
+}
 .auth-links{
   display: flex;
   justify-content: flex-end;
@@ -528,3 +543,4 @@ select:required:invalid {
   font-weight: 600;
 }
 .auth-link:hover{ text-decoration: underline; }
+
