@@ -518,12 +518,49 @@ select:required:invalid {
 }
 
 .login-page {
-  /* waveLogin.png should be in the same folder as the HTML */
   background-image: url("Images/waveLogin.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   background-attachment: fixed;  /* image stays still while content scrolls */
+}
+.login-page .homepage-navbar {
+  display: flex;
+  width: fit-content;            /* shrink to only what is needed */
+  margin: 0 auto;
+  gap: 0.4rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(248, 246, 244, 0.9); /* light, slightly see-through */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(3px);            
+}
+.login-page .homepage-navbar a {
+  padding: 0.3rem 0.85rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #21445b;
+  background: rgba(0, 95, 135, 0.12);    /* soft blue chip behind each link */
+  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+/* Hover / active state so they feel clickable */
+.login-page .homepage-navbar a:hover,
+.login-page .homepage-navbar a[aria-current="page"] {
+  background: rgba(0, 95, 135, 0.85);
+  color: #fdfdfd;
+  transform: translateY(-1px);
+}
+/* Make the greeting line easier to read */
+.login-page .hero .intro {
+  display: inline-block;
+  margin-top: 0.7rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.45);
+  color: #f7f7f7;
+  font-size: 0.95rem;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
 }
 .login-page .container {
   margin-top: 1.5rem;
@@ -531,6 +568,7 @@ select:required:invalid {
 }
 .login-page .hero {
   background: transparent;
+  text-align: center;
 }
 .auth-links{
   display: flex;
@@ -543,5 +581,4 @@ select:required:invalid {
   font-weight: 600;
 }
 .auth-link:hover{ text-decoration: underline; }
-
 
