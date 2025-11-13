@@ -94,7 +94,7 @@ footer a:hover {
    Hero banner, mission statement, navigation, and icons.
 ============================================================ */
 .homepage-hero {
-  background: url('wave-transparent-background-illustration-free-png-3822571536.png') no-repeat center/cover;
+  background: url('Images/wave-transparent-background-illustration-free-png-3822571536.png') no-repeat center/cover;
   text-align: center;
   color: black;
   padding: 2rem 1rem;
@@ -543,4 +543,5 @@ select:required:invalid {
   font-weight: 600;
 }
 .auth-link:hover{ text-decoration: underline; }
+
 
