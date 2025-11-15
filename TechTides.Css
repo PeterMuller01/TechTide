@@ -275,7 +275,7 @@ textarea {
 ============================================================ */
 
 .forums-page {
-  background-image: url("Images/newsLighthouse.png");
+  background-image: url("Images/forumBeach.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -656,3 +656,4 @@ select:required:invalid {
 .auth-link:hover {
   text-decoration: underline;
 }
+
