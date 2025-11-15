@@ -4,38 +4,32 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>TechTide • Feedback</title>
-    <!--Logo for the tab-->
     <link rel="icon" type="image/png" href="TechTideLogo.png" />
-    <!-- Linking the separate CSS file I made just for the feedback page -->
     <link rel="stylesheet" href="TechTides.Css" />
   </head>
-  <body>
-    <!-- Banner message at the very top of the page -->
+  <body class="feedback-page" style="background-image: url('Images/feedbackWave.png');">
     <div class="banner" role="note">
-      Help us improve TechTide — share feedback, report issues, or request
-      support.
+      Help us improve TechTide by sharing feedback, reporting issues, or requesting support.
     </div>
-    <!-- Header section with title + nav links -->
-    <header class="hero">
-      <h1>Feedback</h1>
 
-      <nav class="homepage-navbar">
+    <header class="hero feedback-hero">
+      <h1>Feedback</h1>
+      <nav class="primary-nav" aria-label="Primary">
         <a href="index.html">Home</a>
         <a href="forums.html">Forums</a>
         <a href="news.html">News</a>
         <a href="resources.html">Resources</a>
-        <a href="feedback.html">Feedback</a>
+        <a href="feedback.html" aria-current="page">Feedback</a>
+        <a href="login.html">Login</a>
       </nav>
-
-      <p class="intro">
-        Use this form to tell us what’s working, what’s broken, and what you’d
-        like to see next. We read every submission.
+      <p class="hero-intro">
+        Use this form to tell us what is working, what feels confusing, and what you would like to see next.
       </p>
     </header>
 
     <main class="container" id="main">
-      <!-- Form starts here (not hooked up yet since this is just a rough draft) -->
-      <form id="feedbackForm"
+      <form
+        id="feedbackForm"
         class="card form"
         action="#"
         method="post"
@@ -56,20 +50,20 @@
               placeholder="you@school.edu"
               required
             />
-            <p class="hint">We’ll only use this to reply to your message.</p>
+            <p class="hint">We will only use this to reply to your message.</p>
           </div>
           <div class="checks">
             <label class="check">
               <input type="checkbox" id="anonymous" name="anonymous" />
-                Submit feedback anonymously (don’t include my email)
-              </label>
-  </div>
+              Submit feedback anonymously (do not include my email)
+            </label>
+          </div>
         </fieldset>
 
         <!-- Category / details -->
         <fieldset class="section">
           <legend>What is this about?</legend>
-          <!-- Section where user chooses type of feedback -->
+
           <div class="grid">
             <div class="field">
               <label for="category">Category</label>
@@ -85,7 +79,6 @@
               </select>
             </div>
 
-            <!-- Letting users mark urgency level -->
             <div class="field">
               <label for="severity">Urgency</label>
               <select id="severity" name="severity">
@@ -97,7 +90,6 @@
             </div>
           </div>
 
-          <!-- Bigger text box for details -->
           <div class="field">
             <label for="subject">Short title</label>
             <input
@@ -115,13 +107,13 @@
               id="details"
               name="details"
               rows="7"
-              placeholder="Tell us what happened or share your idea. Include steps to reproduce if it’s a bug."
+              placeholder="Tell us what happened or share your idea. Include steps to reproduce if it is a bug."
               required
             ></textarea>
           </div>
         </fieldset>
 
-        <!-- Quick rating system -->
+        <!-- Rating -->
         <fieldset class="inline-group" aria-labelledby="rating-label">
           <legend id="rating-label">
             How satisfied are you with TechTide today?
@@ -129,9 +121,7 @@
           <div class="ratings">
             <label><input type="radio" name="rating" value="1" /> 1</label>
             <label><input type="radio" name="rating" value="2" /> 2</label>
-            <label
-              ><input type="radio" name="rating" value="3" checked /> 3</label
-            >
+            <label><input type="radio" name="rating" value="3" checked /> 3</label>
             <label><input type="radio" name="rating" value="4" /> 4</label>
             <label><input type="radio" name="rating" value="5" /> 5</label>
           </div>
@@ -140,11 +130,10 @@
         <div class="checks">
           <label class="check">
             <input type="checkbox" name="contact_ok" />
-            It’s okay to contact me for more info.
+            It is okay to contact me for more information.
           </label>
         </div>
 
-        <!-- Submit button (not hooked to anything yet) -->
         <div class="actions">
           <button class="btn" type="submit">Submit Feedback</button>
           <p class="smallprint">
@@ -154,16 +143,15 @@
         </div>
       </form>
 
-      <!-- Static “success” placeholder you can swap in later -->
       <aside class="card note">
-        <strong>Note:</strong> This is a rough draft. Hook this form to your
-        back end or a service later.
+        <strong>Note:</strong> This is a rough draft and does not currently hook to a database.
       </aside>
     </main>
 
     <footer class="site-footer">
       <p><strong>TechTide</strong> — Learn • Share • Connect</p>
     </footer>
+
     <script src="feedback.js"></script>
   </body>
 </html>
