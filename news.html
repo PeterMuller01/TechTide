@@ -3,89 +3,91 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TechTide News</title>
+    <title>TechTide • News</title>
     <link rel="stylesheet" href="TechTides.Css" />
+    <link rel="icon" type="image/png" href="TechTideLogo.png" />
   </head>
-  <body>
-    <section class="about">
-      <p>
-        this is your go-to hub for the latest news, trends, and insights.
-        Whether you’re a seasoned pro or just starting out, TechTide keeps you
-        ahead of the curve.
-      </p>
-    </section>
-    <header>
-      <h2>News</h2>
+  <body class="news-page">
+    <div class="banner">
+      Stay current with cybersecurity and tech stories that matter.
+    </div>
 
-      <nav class="homepage-navbar">
+    <header class="hero news-hero">
+      <h1>News</h1>
+      <nav class="primary-nav" aria-label="Primary">
         <a href="index.html">Home</a>
         <a href="forums.html">Forums</a>
-        <a href="news.html">News</a>
+        <a href="news.html" aria-current="page">News</a>
         <a href="resources.html">Resources</a>
         <a href="feedback.html">Feedback</a>
         <a href="login.html">Login</a>
       </nav>
+      <p class="hero-intro">
+        Quick highlights and articles to help you keep up with new tools, threats, and trends.
+      </p>
     </header>
 
-    <main>
-      <!-- Main Featured Card -->
-      <div class="card small-card">
+    <main class="container">
+      <!-- Main featured card -->
+      <article class="card news-card">
         <img
           src="https://www.pymnts.com/wp-content/uploads/2025/09/Oracle-OpenAI.jpg?w=457/50x50"
-          alt="Oracle News"
+          alt="Oracle and AI partnership"
         />
-        <div class="card-title">
+        <h2 class="news-card-title">
           Oracle’s $300 Billion Dollar Deal, and What It Means For You
-        </div>
-        <div class="card-content">
-          Last Wednesday, Oracle announced a historic merger with a
-          multinational company, reshaping the global tech landscape...
-        </div>
-      </div>
+        </h2>
+        <p class="news-card-content">
+          Last Wednesday, Oracle announced a historic merger with a multinational company,
+          reshaping the global tech landscape. For everyday users and students, this shift
+          could change the tools we rely on, the way we store data, and the services we use
+          in the cloud.
+        </p>
+      </article>
 
-      <!-- Three smaller boxes -->
-      <div class="card-grid">
-        <div class="mini-card">
+      <!-- Three smaller highlight cards -->
+      <section class="news-card-grid">
+        <article class="news-mini-card">
           <img
             src="https://www.orangemantra.com/blog/wp-content/uploads/2022/08/ai-in-cyber-security.png"
-            alt="Tech Update"
+            alt="AI in cybersecurity"
           />
-          <div class="mini-title">AI Reshaping Cybersecurity</div>
-        </div>
-        <div class="mini-card">
+          <h3 class="news-mini-title">AI Reshaping Cybersecurity</h3>
+          <p class="news-mini-text">
+            Machine learning is helping analysts spot threats faster, but it also introduces
+            new risks and raises questions about bias and privacy.
+          </p>
+        </article>
+
+        <article class="news-mini-card">
           <img
             src="https://tse4.mm.bing.net/th/id/OIP.ZpyQwhFb7FK5LoHGJQd9fQAAAA?rs=1&pid=ImgDetMain&o=7&rm=3"
-            alt="Software News"
+            alt="Software update"
           />
-          <div class="mini-title">Microsoft Unveils Next-Gen OS</div>
-        </div>
-        <div class="mini-card">
+          <h3 class="news-mini-title">Microsoft Unveils Next-Gen OS</h3>
+          <p class="news-mini-text">
+            Microsoft’s new operating system focuses heavily on security features and better
+            hardware isolation, which could change how we harden endpoints.
+          </p>
+        </article>
+
+        <article class="news-mini-card">
           <img
             src="https://www.gadgetinsiders.com/wp-content/uploads/2025/01/Exciting-First-Look-Nvidias-New-RTX-50-Series-GPUs-Set-to-Revolutionize-Gaming-Next-Week-at-CES2.webp"
-            alt="Hardware News"
+            alt="New GPU release"
           />
-          <div class="mini-title">New GPU Revolutionizes Gaming</div>
-        </div>
-      </div>
+          <h3 class="news-mini-title">New GPU Series For High-End Workloads</h3>
+          <p class="news-mini-text">
+            The latest GPU line is marketed for gaming, but its parallel processing power has
+            major implications for AI, data analysis, and password cracking tools.
+          </p>
+        </article>
+      </section>
     </main>
 
-    <div class="card small-card">
-      <img
-        src="https://i.extremetech.com/imagery/content-types/026WiHQDsNea1mcA4hV0xIk/hero-image.fit_lim.v1678673231.jpg"
-        alt="Oracle News"
-      />
-      <div class="card-title">
-        Oracle’s $300 Billion Dollar Deal, and What It Means For You
-      </div>
-      <div class="card-content">
-        Last Wednesday, Oracle announced a historic merger with a multinational
-        company, reshaping the global tech landscape...
-      </div>
-    </div>
-
-    <footer>
+    <footer class="site-footer">
       <p>More from TechTide — Forums • News • Resources</p>
-      <p>Contact: (803) XXX-XXXX</p>
+      <p class="contact">Contact: (803) XXX-XXXX</p>
     </footer>
   </body>
 </html>
