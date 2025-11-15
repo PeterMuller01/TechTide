@@ -4,101 +4,86 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TechTide</title>
-
-    <!-- External CSS -->
     <link rel="stylesheet" href="TechTides.Css" />
-
-    <!-- Internal CSS -->
+    <link rel="icon" type="image/png" href="TechTideLogo.png" />
   </head>
-  <body>
-    <!-- Top Banner (inline CSS example) -->
+  <body class="home-page">
+    <!-- Top Banner -->
     <div class="banner">
       Welcome to your go-to hub for IT news, tutorials, and community where
       curiosity meets code and ideas come to life.
     </div>
 
-<!-- Hero Section -->
-<header class="homepage-hero">
-  <nav class="homepage-navbar">
-    <a href="index.html">Home</a>
-    <a href="forums.html">Forums</a>
-    <a href="news.html">News</a>
-    <a href="resources.html">Resources</a>
-    <a href="feedback.html">Feedback</a>
-    <a href="login.html">Login</a>
-  </nav>
+    <!-- Shared hero: title + nav + welcome line -->
+    <header class="hero home-hero">
+      <h1>TechTide</h1>
+      <nav class="primary-nav" aria-label="Primary">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="forums.html">Forums</a>
+        <a href="news.html">News</a>
+        <a href="resources.html">Resources</a>
+        <a href="feedback.html">Feedback</a>
+        <a href="login.html">Login</a>
+      </nav>
+      <p class="hero-intro">
+        A place to learn cybersecurity, stay updated on tech news, and connect with others who care about the same topics.
+      </p>
+    </header>
 
-  <div class="hero-content">
-    <h1>TechTide</h1>
-    <p class="homepage-mission">
-      Our Mission:<br />
-      At TechTide, we deliver clear, credible tech news, foster meaningful
-      community dialogue, and empower both professionals and newcomers with
-      practical resources and insights.
-    </p>
-  </div>
-</header>
-
-<!-- Icon Navigation -->
-  <section class="homepage-icon-nav">
-    <div class="homepage-icon-card">
-      <a href="index.html">
-        <span>🏠</span>
-        <span>Home</span>
-      </a>
-    </div>
-    <div class="homepage-icon-card">
-      <a href="forums.html">
-        <span>💬</span>
-        <span>Forums</span>
-      </a>
-    </div>
-    <div class="homepage-icon-card">
-      <a href="news.html">
-        <span>📰</span>
-        <span>News</span>
-      </a>
-    </div>
-    <div class="homepage-icon-card">
-      <a href="resources.html">
-        <span>📂</span>
-        <span>Resources</span>
-      </a>
-    </div>
-    <div class="homepage-icon-card">
-      <a href="feedback.html">
-        <span>❓</span>
-        <span>Feedback</span>
-      </a>
-    </div>
-  </section>
-</header>
-
+    <!-- Icon Navigation -->
+    <section class="homepage-icon-nav">
+      <div class="homepage-icon-card">
+        <a href="forums.html">
+          <span>💬</span>
+          <span>Forums</span>
+        </a>
+      </div>
+      <div class="homepage-icon-card">
+        <a href="news.html">
+          <span>📰</span>
+          <span>News</span>
+        </a>
+      </div>
+      <div class="homepage-icon-card">
+        <a href="resources.html">
+          <span>📂</span>
+          <span>Resources</span>
+        </a>
+      </div>
+      <div class="homepage-icon-card">
+        <a href="feedback.html">
+          <span>❓</span>
+          <span>Feedback</span>
+        </a>
+      </div>
+      <div class="homepage-icon-card">
+        <a href="login.html">
+          <span>🔐</span>
+          <span>Login</span>
+        </a>
+      </div>
+    </section>
 
     <!-- About Section -->
     <section class="homepage-mission">
       <h2>Dive into TechTide and make waves</h2>
-      <!-- inline -->
       <p>
-        Whether you're a beginner or a seasoned professional, TechTide has a
-        space for you. This is your space to grow, share, and learn. We’re
-        building a community where developers, hobbyists, analysts, and curious
-        minds can create an environment where everyone can grow.
+        Whether you're a beginner or a seasoned professional, TechTide has a space for you.
+        This is your space to grow, share, and learn. We are building a community where
+        developers, hobbyists, analysts, and curious minds can support each other.
       </p>
       <p>
-        TechTide believes knowledge should be easily accessible, and
-        collaboration with others should be authentic, regardless of skill.
-        Everyone adds value. So jump in, watch tutorials, explore forums, or
-        read tech news. The tech world moves fast, and we aim to keep everyone
-        moving with the current.
+        TechTide believes knowledge should be easy to access and collaboration should feel authentic.
+        Everyone adds value. Jump in to explore forums, read news, or browse resources. The tech world
+        moves fast, and we want to help everyone keep up with the current.
       </p>
     </section>
 
     <!-- Footer -->
-    <footer id="bottom">
+    <footer class="site-footer">
       <div class="footer-content">
         <p><strong>More from TechTide</strong></p>
-        <p>Forums | News | Resources</p>
+        <p>Forums • News • Resources</p>
         <p class="social">
           Follow Us:
           <a href="https://www.instagram.com/">📷</a>
@@ -106,7 +91,6 @@
           <a href="https://www.linkedin.com/">💼</a>
         </p>
         <p class="contact">Contact: (803)-XXX-XXXX</p>
-        <!-- inline -->
       </div>
     </footer>
   </body>
