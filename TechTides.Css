@@ -270,26 +270,6 @@ textarea {
   color: #1e6db8;
 }
 
-.cyber-quote {
-  margin: 1.25rem auto;
-  max-width: 680px;
-  text-align: center;
-  font-style: italic;
-  font-size: 1.02rem;
-  padding: 0.85rem 1rem;
-  border-radius: 12px;
-  /* visually align with other site cards */
-  background: var(--card, #efe7df);
-  border: 1px solid var(--card-edge, #d7cbbf);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-}
-
-.cyber-quote-cite {
-  margin-top: 0.45rem;
-  font-size: 0.9rem;
-  color: var(--ink-soft, #666);
-}
-
 @media (max-width: 520px) {
   .cyber-quote {
     font-size: 0.98rem;
@@ -685,6 +665,50 @@ select:required:invalid {
 }
 .auth-link:hover {
   text-decoration: underline;
+}
+
+/* ============================================================
+   CYBER QUOTE JS
+============================================================ */
+.cyber-quote-container {
+  display: flex;
+  justify-content: center;
+  margin: 1.75rem auto;
+  padding: 0;
+}
+
+.cyber-quote {
+  background: var(--card, #efe7df);
+  border: 1px solid var(--card-edge, #d7cbbf);
+  border-radius: 14px;
+  padding: 1.2rem 1.4rem;
+  max-width: 700px;
+  width: 90%;
+  text-align: center;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #222;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.cyber-quote.show {
+  opacity: 1;
+}
+
+.cyber-quote-author {
+  margin-top: 0.55rem;
+  font-size: 0.92rem;
+  color: var(--ink-soft, #555);
+  font-style: normal;
+}
+
+@media (max-width: 520px) {
+  .cyber-quote {
+    font-size: 1rem;
+    padding: 0.9rem 1rem;
+  }
 }
 
 
