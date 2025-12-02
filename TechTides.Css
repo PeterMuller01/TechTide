@@ -668,7 +668,7 @@ select:required:invalid {
 }
 
 /* ============================================================
-   CYBER QUOTE JS
+   CYBER QUOTE — STYLED + CENTERED + ANIMATED
 ============================================================ */
 .cyber-quote-container {
   display: flex;
@@ -710,5 +710,4 @@ select:required:invalid {
     padding: 0.9rem 1rem;
   }
 }
-
 
