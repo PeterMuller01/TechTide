@@ -270,6 +270,36 @@ textarea {
   color: #1e6db8;
 }
 
+.cyber-quote {
+  margin: 1.25rem auto;
+  max-width: 680px;
+  text-align: center;
+  font-style: italic;
+  font-size: 1.02rem;
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  /* visually align with other site cards */
+  background: var(--card, #efe7df);
+  border: 1px solid var(--card-edge, #d7cbbf);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+.cyber-quote-cite {
+  margin-top: 0.45rem;
+  font-size: 0.9rem;
+  color: var(--ink-soft, #666);
+}
+
+@media (max-width: 520px) {
+  .cyber-quote {
+    font-size: 0.98rem;
+    padding: 0.65rem 0.8rem;
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
+  }
+}
+
+
 /* ============================================================
    FORUMS STYLES
 ============================================================ */
@@ -656,4 +686,5 @@ select:required:invalid {
 .auth-link:hover {
   text-decoration: underline;
 }
+
 
