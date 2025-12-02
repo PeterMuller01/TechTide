@@ -1,103 +1,96 @@
-/* cyberQuotes.js — minimal, non-destructive injector
-   Picks a random cybersecurity quote per page load and inserts it
-   between the mission section (.homepage-mission) and the icons (.homepage-icon-nav).
-   Exposes window.initCyberQuote() if you need to re-run after dynamic DOM updates.
-*/
+/* ============================================================
+   cyberQuotes.js — rotating cybersecurity quotes (every 5s)
+   Inserts a centered quote box between the mission + icons.
+============================================================ */
+
 (function () {
   const QUOTES = [
-    '“Security is not a product, but a process.” — Bruce Schneier',
-    '“Attackers only need to be right once. We need to be right every time.”',
-    '“An ounce of prevention is worth a terabyte of cure.”',
-    '“The biggest threat to security is complacency.”',
-    '“Cybersecurity is much more than a matter of IT.” — Stephane Nappo',
-    '“Assume breach. Design for resilience.”',
-    '“Privacy is not optional; it’s the price of safety.”'
+    { text: "Security is not a product, but a process.", author: "Bruce Schneier" },
+    { text: "Attackers only need to be right once. We need to be right every time.", author: "Unknown" },
+    { text: "An ounce of prevention is worth a terabyte of cure.", author: "Unknown" },
+    { text: "The biggest threat to security is complacency.", author: "Unknown" },
+    { text: "Cybersecurity is much more than a matter of IT.", author: "Stephane Nappo" },
+    { text: "Assume breach. Design for resilience.", author: "Unknown" },
+    { text: "Privacy is not optional; it’s the price of safety.", author: "Unknown" }
   ];
 
+  let currentIndex = 0;
+  let quoteBox;
+
   const MISSION_SELECTORS = [
-    '#mission-statement',
     '.homepage-mission',
+    '#mission-statement',
     '.mission',
     'header .mission',
     'header'
   ];
   const ICONS_SELECTORS = [
-    '#icon-section',
     '.homepage-icon-nav',
+    '#icon-section',
     '.icons',
-    '.features',
-    '.homepage-icon-card'
+    '.features'
   ];
 
-  function pickRandom(arr) {
-    return arr[Math.floor(Math.random() * arr.length)];
-  }
-
-  function createQuoteElement(text) {
-    const wrapper = document.createElement('div');
-    wrapper.className = 'cyber-quote';
-    wrapper.setAttribute('role', 'note');
-    wrapper.setAttribute('aria-live', 'polite');
-
-    const quoteText = document.createElement('div');
-    quoteText.className = 'cyber-quote-text';
-    quoteText.textContent = text;
-    wrapper.appendChild(quoteText);
-
-    const cite = document.createElement('div');
-    cite.className = 'cyber-quote-cite';
-    cite.textContent = ''; // author is typically included in the quote string
-    wrapper.appendChild(cite);
-
-    return wrapper;
-  }
-
-  function findFirst(selectorList) {
-    for (const sel of selectorList) {
-      const el = document.querySelector(sel);
+  function findFirst(list) {
+    for (const s of list) {
+      const el = document.querySelector(s);
       if (el) return el;
     }
     return null;
   }
 
-  function findIconsAfter(missionEl) {
-    for (const sel of ICONS_SELECTORS) {
-      const nodes = Array.from(document.querySelectorAll(sel));
-      if (!nodes.length) continue;
-      for (const node of nodes) {
-        if (missionEl.compareDocumentPosition(node) & Node.DOCUMENT_POSITION_FOLLOWING) {
-          return node;
-        }
-      }
+  function insertQuoteBox() {
+    const mission = findFirst(MISSION_SELECTORS);
+    const icons = findFirst(ICONS_SELECTORS);
+    if (!mission) return;
+
+    const container = document.createElement('div');
+    container.className = 'cyber-quote-container';
+
+    quoteBox = document.createElement('div');
+    quoteBox.className = 'cyber-quote';
+
+    container.appendChild(quoteBox);
+
+    if (icons && mission.compareDocumentPosition(icons) & Node.DOCUMENT_POSITION_FOLLOWING) {
+      icons.parentNode.insertBefore(container, icons);
+    } else {
+      mission.parentNode.insertBefore(container, mission.nextSibling);
     }
-    return findFirst(ICONS_SELECTORS);
   }
 
-  function insertQuote() {
-    const missionEl = findFirst(MISSION_SELECTORS);
-    if (!missionEl) return;
+  function showQuote(index) {
+    const q = QUOTES[index];
+    quoteBox.classList.remove('show');
 
-    const iconsEl = findIconsAfter(missionEl);
-    const quoteEl = createQuoteElement(pickRandom(QUOTES));
+    setTimeout(() => {
+      quoteBox.innerHTML = `
+        <div class="cyber-quote-text">“${q.text}”</div>
+        <div class="cyber-quote-author">— ${q.author}</div>
+      `;
+      quoteBox.classList.add('show');
+    }, 300);
+  }
 
-    if (iconsEl && missionEl.compareDocumentPosition(iconsEl) & Node.DOCUMENT_POSITION_FOLLOWING) {
-      iconsEl.parentNode.insertBefore(quoteEl, iconsEl);
-    } else if (missionEl.nextSibling) {
-      missionEl.parentNode.insertBefore(quoteEl, missionEl.nextSibling);
-    } else {
-      missionEl.parentNode.appendChild(quoteEl);
-    }
+  function startRotation() {
+    showQuote(currentIndex);
+
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % QUOTES.length;
+      showQuote(currentIndex);
+    }, 5000);
+  }
+
+  function init() {
+    insertQuoteBox();
+    startRotation();
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', insertQuote, { once: true });
+    document.addEventListener('DOMContentLoaded', init, { once: true });
   } else {
-    insertQuote();
+    init();
   }
 
-  window.initCyberQuote = function () {
-    const prev = document.querySelectorAll('.cyber-quote');
-    prev.forEach(n => n.remove());
-    insertQuote();
-  };
+  window.initCyberQuote = init;
 })();
