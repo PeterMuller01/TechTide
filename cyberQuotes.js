@@ -1,8 +1,4 @@
-/* ============================================================
-   cyberQuotes.js — rotating cybersecurity quotes (every 5s)
-   Inserts a centered quote box between the mission + icons.
-============================================================ */
-
+/* cyberQuotes.js — rotating cybersecurity quotes (every 5s) */
 (function () {
   const QUOTES = [
     { text: "Security is not a product, but a process.", author: "Bruce Schneier" },
@@ -55,14 +51,19 @@
     if (icons && mission.compareDocumentPosition(icons) & Node.DOCUMENT_POSITION_FOLLOWING) {
       icons.parentNode.insertBefore(container, icons);
     } else {
-      mission.parentNode.insertBefore(container, mission.nextSibling);
+      // insert right after mission
+      if (mission.nextSibling) {
+        mission.parentNode.insertBefore(container, mission.nextSibling);
+      } else {
+        mission.parentNode.appendChild(container);
+      }
     }
   }
 
   function showQuote(index) {
     const q = QUOTES[index];
+    // fade out then replace then fade in
     quoteBox.classList.remove('show');
-
     setTimeout(() => {
       quoteBox.innerHTML = `
         <div class="cyber-quote-text">“${q.text}”</div>
@@ -73,8 +74,8 @@
   }
 
   function startRotation() {
+    if (!quoteBox) return;
     showQuote(currentIndex);
-
     setInterval(() => {
       currentIndex = (currentIndex + 1) % QUOTES.length;
       showQuote(currentIndex);
@@ -92,5 +93,7 @@
     init();
   }
 
+  // Expose for manual restart if the page updates DOM later
   window.initCyberQuote = init;
 })();
+
